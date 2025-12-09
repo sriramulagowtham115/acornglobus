@@ -1,0 +1,177 @@
+/* -------------------------------------------------------
+   iOS Minimal UI Theme (clean, modern, reusable)
+   -------------------------------------------------------*/
+
+/* ===== BASE ===== */
+:root {
+  --bg: #f7f8fa;
+  --text: #0b1220;
+  --text-muted: #8a8f98;
+  --surface: #ffffff;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --accent: #007aff; /* iOS blue */
+  --border: rgba(0,0,0,0.08);
+  --chip-bg: rgba(0,0,0,0.04);
+  --chip-border: rgba(0,0,0,0.07);
+
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Helvetica Neue", Arial, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page {
+  max-width: 1100px;
+  margin: 0 auto; /* center the whole content */
+  padding: 20px;
+}
+
+
+/* ===== TITLE ===== */
+.ios-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.ios-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #f7f8fa;   /* match page background EXACTLY */
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+
+/* ===== SECTION LABEL ===== */
+.section-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* ===== BUTTONS ===== */
+.ios-btn {
+  border: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.ios-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0,122,255,0.2);
+}
+
+.ios-btn-primary:hover {
+  background: #006ae6;
+}
+
+.ios-btn-ghost {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+}
+
+.ios-btn-ghost:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+/* ===== SEGMENTED CONTROL (Court selector) ===== */
+.segmented {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+}
+
+.segmented button {
+  flex: 1;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.14s ease;
+}
+
+.segmented button.active {
+  background: #ffffff;
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 6px 14px rgba(0,122,255,0.15);
+}
+
+/* ===== TIME SLOTS ===== */
+.time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  min-width: 120px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.time-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.time-chip.selected {
+  background: #e8f0ff;
+  border-color: #aac9ff;
+  color: #0051c8;
+  box-shadow: 0 8px 20px rgba(0,122,255,0.12);
+}
+
+/* ===== INPUTS ===== */
+.ios-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .ios-title {
+    font-size: 28px;
+  }
+  .time-chip {
+    min-width: 100px;
+    padding: 10px 12px;
+  }
+}
